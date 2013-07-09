@@ -1,0 +1,8 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+
+{% if page.type == 'article' %}
+<p>{{ page.author }}. ({{ page.year }}). {{ page.title }}. {{ page.journal }}.</p>
+{% endif %}
