@@ -33,6 +33,16 @@ module Jekyll
       @name = "#{ref['citekey']}.html"
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'reference_page.html')
+
+      filename = "#{ref['citekey']}.md"
+      notes_file = File.join(base, 'notes', filename)
+
+      if File.exists?(notes_file)
+        notes_page = Page.new(site, base, 'notes', filename)
+        notes_page.render(site.layouts, site.site_payload)
+        self.data['notes'] = notes_page.content
+      end
+
       self.data = self.data.merge(ref)
     end
   end

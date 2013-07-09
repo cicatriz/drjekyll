@@ -4,5 +4,10 @@ layout: default
 <h2>{{ page.title }}</h2>
 
 {% if page.type == 'article' %}
-<p>{{ page.author }}. ({{ page.year }}). {{ page.title }}. {{ page.journal }}.</p>
+<p class="meta">{{ page.author }}. ({{ page.year }}). {{ page.title }}. {{ page.journal }}.</p>
+{% endif %}
+
+{% if page.notes %}
+<h3>Notes</h3>
+{{ page.notes }}
 {% endif %}
