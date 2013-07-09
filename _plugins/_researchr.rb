@@ -41,8 +41,6 @@ module Jekyll
             refhash[k.to_s] = v.to_s.gsub /^{(.*)}$/, '\1'
           end
           
-          puts refhash.inspect
-          
           write_ref_page(site, dir, refhash)
         end
       end
