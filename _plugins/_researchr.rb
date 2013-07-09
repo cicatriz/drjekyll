@@ -1,12 +1,27 @@
 module Jekyll
+  require 'bibtex'
+
   class CiteTag < Liquid::Tag
     def initialize(tag_name, citekey, tokens)
       super
       @citekey = citekey.strip
     end
 
+    def namify(names) # TODO move
+      return names[0] if names.size == 1
+      return names[0] + ' et al.' if names.size > 3
+      names[0..-2].join(', ') + ' &amp; ' + names[-1].to_s
+    end
+
     def render(context)
-      "<a href=\"/ref/#{@citekey}.html\">#{@citekey}</a>"
+      file = 'lib.bib' # TODO or from site config
+      bib = BibTeX.open("./#{file}")
+      ref = bib[@citekey]
+
+      ax = []
+      ref.author.each { |a| ax << a.last }
+
+      "<a href=\"/ref/#{@citekey}.html\">#{namify(ax)}, #{ref.year}</a>"
     end
   end
 
@@ -26,8 +41,6 @@ module Jekyll
     safe true
 
     def generate(site)
-      require 'bibtex'
-
       if site.layouts.key? 'reference_page'
         dir = site.config['ref_dir'] || 'ref'
         file = site.config['bib_file'] || 'lib.bib'
