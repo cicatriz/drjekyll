@@ -1,0 +1,13 @@
+Gentner, D., Loewenstein, J., & Thompson, L. (2003). Learning and transfer: A general role for analogical encoding. Journal of Educational Psychology, 95(2), 393–405. doi:10.1037/0022-0663.95.2.393
+
+
+p.393: Teaching by examples and cases is widely used to promote learning, but it varies widely in its effectiveness. The authors test an adaptation to case-based learning that facilitates abstracting problemsolving schemas from examples and using them to solve further problems: analogical encoding, or learning by drawing a comparison across examples. In 3 studies, the authors examined schema abstraction and transfer among novices learning negotiation strategies. Experiment 1 showed a benefit for analogical learning relative to no case study. Experiment 2 showed a marked advantage for comparing two cases over studying the 2 cases separately. Experiment 3 showed that increasing the degree of comparison support increased the rate of transfer in a face-to-face dynamic negotiation exercise. -- Highlighted jul 9, 2013
+
+
+
+
+Tenenbaum, J. B., & Griffiths, T. L. (2003). Theory-based causal inference. Advances in neural information processing systems, 43–50.
+
+
+p.43: People routinely make sophisticated causal inferences unconsciously, effortlessly, and from very little data – often from just one or a few observations. We argue that these inferences can be explained as Bayesian computations over a hypothesis space of causal graphical models, shaped by strong top-down prior knowledge in the form of intuitive theories. We present two case studies of our approach, including quantitative models of human causal judgments and brief comparisons with traditional bottom-up models of inference. -- Highlighted jul 9, 2013
+
