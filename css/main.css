@@ -23,6 +23,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 100%; }
 
 h1 { margin-bottom: 1em; }
+
+h2 {
+  font-size: 24px;
+}
+
 p { margin: 1em 0; }
 
 a         { color: #00a; }
@@ -97,6 +102,9 @@ ul.posts span {
 
 .site .meta {
   color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .site .footer {
