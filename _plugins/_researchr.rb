@@ -52,6 +52,14 @@ module Jekyll
         self.data['highlights'] = hl_page.content
       end 
 
+      bl_file = File.join(base, 'backlinks', filename)
+
+      if File.exists?(bl_file)
+        bl_page = Page.new(site, base, 'backlinks', filename)
+        bl_page.render(site.layouts, site.site_payload)
+        self.data['backlinks'] = bl_page.content
+      end
+
       self.data = self.data.merge(ref)
     end
   end
@@ -101,6 +109,30 @@ module Jekyll
             cur_file.puts line
           end
         end
+      end
+    end
+  end
+
+  class BacklinksGenerator < Generator
+
+    def get_backlinks_from_page_or_post(site, page)
+      page.content.scan(/{% cite\s+(\S+)\s*%}/) do |match|
+        citekey = $1
+        File.open(File.join("backlinks", "#{citekey}.md"), 'w') do |f|
+          f.puts "* [#{page.title || page.name}](#{page.url})"
+        end
+      end
+    end
+
+    def generate(site)
+      Dir.foreach('backlinks') { |f| fn = File.join('backlinks', f); File.delete(fn) if f != '.' && f != '..' }
+
+      site.pages.each do |page|
+        get_backlinks_from_page_or_post(site, page)
+      end
+      
+      site.posts.each do |post|
+        get_backlinks_from_page_or_post(site, post)
       end
     end
   end
