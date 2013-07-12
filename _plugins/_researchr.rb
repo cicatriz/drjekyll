@@ -99,14 +99,19 @@ module Jekyll
 
           citekey = "#{authors.split(',')[0]}:#{year}#{hash}"
 
-          puts "found highlights for citekey #{citekey}"
-
           name = "#{citekey}.md"
           cur_file = File.open(File.join(dir, name), 'w')
           cur_file.write("")
         else
           if cur_file
-            cur_file.puts line
+            if line =~ /^(p\.\d+): (.*?)-- Highlighted (.*)$/
+              page = $1
+              content = $2
+              date = $3
+              cur_file.puts "> #{content} *#{page} (accessed #{date})*"
+            else
+              cur_file.puts line
+            end
           end
         end
       end
