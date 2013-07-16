@@ -86,7 +86,8 @@ module Jekyll
             second = 'a'.ord + crc % 26
             hash = "#{first.chr}#{second.chr}"
           else # gen hash from title 
-            excluded_characters = "±˙˜´‘’‛“”‟·•!¿¡#∞£¥$%‰&˝¨ˆ¯˘¸˛^~√∫*§◊¬¶†‡≤≥÷:ªº\"\'©®™"
+            #excluded_characters = "±˙˜´‘’‛“”‟·•!¿¡#∞£¥$%‰&˝¨ˆ¯˘¸˛^~√∫*§◊¬¶†‡≤≥÷:ªº\"\'©®™"
+            excluded_characters = "&\"'"
             #replaced_characters = "°˚+-–—_…,.;ı(){}‹›<>«=≈?|/\\"
             replaced_characters = "-" # something weird happening with above set
 
