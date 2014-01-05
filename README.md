@@ -25,12 +25,13 @@ Papers bibliography. You can see a citation entry in the path
 
 See http://jekyllrb.com for information about using Jekyll. Within your
 posts, you can create a link to a citation using `{% cite citekey %}`.
-Replacing "citekey" with the Papers citekey
+Replacing "citekey" with the Papers citekey (which can be inserting
+using Paper's ctrl, ctrl shortcut if enabled).
 
 ### Adding highlights
 
 1. In Papers, File > Export... > Notes
-2. Save as `highlights.txt` in the root directory with the `Plain text`
+2. Save as `highlights.txt` in the root directory with the "Plain text"
    format
 
 ### Adding notes
