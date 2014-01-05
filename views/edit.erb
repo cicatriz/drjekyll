@@ -1,0 +1,16 @@
+<form method="POST" action="/pages">
+  <input type="hidden" name="page[filename]" value="<%= filename %>">
+  <input type="hidden" name="page[namespace]" value="<%= namespace %>">
+
+  <div>
+    <label>Title</label><br>
+    <input type="text" name="page[title]" value="<%= title %>" size="80"<% if contentonly %>disabled<% end %>>
+  </div>
+
+  <div>
+    <label>Content</label><br>
+    <textarea name="page[content]" cols="80" rows="20"><%= content || "" %></textarea>
+  </div>
+
+  <input type="submit" value="Save">
+</form>
