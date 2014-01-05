@@ -6,6 +6,10 @@ Jekyll + Papers as a research knowledge base
 - Jekyll: http://jekyllrb.com
 - Papers: http://www.papersapp.com/
 
+### Example
+
+http://research-wiki.herokuapp.com/
+
 ### Getting started
 
 1. Fork this repo
